@@ -18,6 +18,15 @@ pipeline {
                 
             }
             
+        stage('Application start') {
+            steps {
+                script {
+                sh "docker run -d --name springapplication -p 8002:8000 springboot"
+
+            }
+                
+            }
+            
         }
     }
 }
