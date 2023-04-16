@@ -22,9 +22,10 @@ pipeline {
                 script {
                     container_status = sh(script: "docker ps -a|grep -i javawebapplication", returnStatus: true) == 0
                     if ("${container_status}" ==  "true")
-          {
+                    {
                     sh 'docker rm -f springapplication'
-          }
+                    }
+                }
         }
       }
             
@@ -39,6 +40,5 @@ pipeline {
             
         }
     }
-        }
         
     
